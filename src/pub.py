@@ -1,4 +1,5 @@
 from src.drink import Drink
+from src.customer import Customer
 
 class Pub:
 
@@ -11,6 +12,14 @@ class Pub:
     def add_money_to_till(self, drink):
         self.pub_till += drink.drink_price
         return self.pub_till
+    
+    def check_age(self, customer):
+
+        if customer.age >= 18:
+            return True
+        
+        return False
+
 
        
 # write function as defined in unit test, this time passing 2 parameters.

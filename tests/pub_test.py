@@ -1,6 +1,8 @@
 import unittest
 from src.pub import Pub
 from src.drink import Drink
+from src.customer import Customer
+#from src.food import Food
 
 class TestPub(unittest.TestCase):
     
@@ -20,6 +22,12 @@ class TestPub(unittest.TestCase):
         drink = Drink("Kronenburg", 3)
         self.assertEqual(103, self.pub.add_money_to_till(drink))
         # define function test.
-        # define what result we want to see customer wallet = 103.
-        # inside assertEqual () add integer, and function to call from pub class.
+        # define what result we want to see pub till = 103.
+        # inside assertEqual () add integer, and function to call from pub class
         # self.pub tells the unit test to access the till in the Pub class and call the till with the value stored in Drink.
+    
+    def test_age_verification(self):
+        customer = Customer("John", 20, 18)
+        self.assertEqual(True, self.pub.check_age(customer))
+    
+
